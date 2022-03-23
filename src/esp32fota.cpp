@@ -24,7 +24,6 @@
 #include <FS.h>
 #include <SPIFFS.h>
 
-
 #include "mbedtls/pk.h"
 #include "mbedtls/md.h"
 #include "mbedtls/md_internal.h"
@@ -43,7 +42,6 @@ esp32FOTA::esp32FOTA(String firmwareType, int firmwareVersion, boolean validate,
     char version_no[256] = {'\0'};     // If we are passed firmwareVersion as an int, we're assuming it's a major version
     semver_render(&_firmwareVersion, version_no);
     log_i("Current firmware version: %s", version_no );
-
 }
 
 esp32FOTA::esp32FOTA(String firmwareType, String firmwareSemanticVersion, boolean validate, boolean allow_insecure_https)
